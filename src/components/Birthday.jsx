@@ -7,7 +7,7 @@ const birthdayOptions = [
     description: "Kreatívna sada pre malé oslavy plné farieb, hier a radosti.",
     price: "od 49 €",
     icon: Gift,
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d",
+    image: "/images/birthday/birthday1.jpg",
   },
   {
     title: "Veľká párty",
@@ -15,7 +15,7 @@ const birthdayOptions = [
       "Kompletný balíček 3D figúrok a maľovania pre celú skupinu detí.",
     price: "od 99 €",
     icon: PartyPopper,
-    image: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84",
+    image: "/images/birthday/birthday2.jpg",
   },
   {
     title: "Tematická oslava",
@@ -23,14 +23,14 @@ const birthdayOptions = [
       "Vyberte si vlastnú tému – dinosaury, rozprávky alebo hrdinovia.",
     price: "od 129 €",
     icon: Sparkles,
-    image: "https://images.unsplash.com/photo-1531058020387-3be344556be6",
+    image: "/images/birthday/birthday3.jpg",
   },
   {
     title: "Vlastná figúrka",
     description: "Originálny 3D model vytvorený podľa vašej predstavy.",
     price: "Individuálne",
     icon: Cake,
-    image: "https://images.unsplash.com/photo-1558636508-e0db3814bd1d",
+    image: "/images/birthday/birthday4.jpg",
   },
 ];
 
