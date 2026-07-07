@@ -374,7 +374,7 @@ export default function Hero() {
               "
             >
               <img
-                src="/public/images/hero.jpg"
+                src="/images/hero.jpg"
                 alt="3D kids kit"
                 className="
                 w-full

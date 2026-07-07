@@ -6,7 +6,7 @@ export const kits = [
     description:
       "3D figúrka pripravená na maľovanie. Rozvíja kreativitu a fantáziu detí.",
     age: "3+ rokov",
-    image: "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1",
+    image: "/images/kits/unicorn.jpg",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const kits = [
     description:
       "Objavte svet dinosaurov s vlastnou 3D figúrkou na vyfarbenie.",
     age: "4+ rokov",
-    image: "https://images.unsplash.com/photo-1569878698889-ef7d22c4fdc6",
+    image: "/images/kits/dinosaurs.jpg",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const kits = [
     description:
       "Roztomilé postavičky, ktoré deti môžu ozdobiť podľa vlastnej fantázie.",
     age: "3+ rokov",
-    image: "https://images.unsplash.com/photo-1594784054940-8c7d7d7c4b90",
+    image: "/images/kits/fairytail.jpg",
   },
   {
     id: 4,
@@ -32,6 +32,6 @@ export const kits = [
     price: "29,90 €",
     description: "Vytvorte vlastný vesmírny svet s originálnymi 3D modelmi.",
     age: "5+ rokov",
-    image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa",
+    image: "/images/kits/cosmo.jpg",
   },
 ];
