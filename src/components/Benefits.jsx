@@ -1,42 +1,61 @@
-import { ShieldCheck, Brain, Users, Gift, Truck, Heart } from "lucide-react";
+"use client";
+
+import {
+  ShieldCheck,
+  Brain,
+  Users,
+  Gift,
+  Truck,
+  Heart,
+  Sparkles,
+} from "lucide-react";
 
 const benefits = [
   {
     title: "Bezpečné materiály",
-    description: "Používame kvalitné a bezpečné materiály vhodné pre deti.",
-    icon: ShieldCheck,
-    style: "from-green-300 to-teal-400",
-  },
-  {
-    title: "Rozvoj kreativity",
-    description: "Maľovanie podporuje fantáziu, sústredenie a jemnú motoriku.",
-    icon: Brain,
-    style: "from-yellow-300 to-orange-400",
-  },
-  {
-    title: "Zábava pre celú rodinu",
     description:
-      "Spoločné tvorenie vytvára krásne chvíle medzi rodičmi a deťmi.",
-    icon: Users,
-    style: "from-pink-400 to-purple-400",
+      "Používame kvalitné materiály vhodné pre deti, aby bolo tvorenie bezpečné a príjemné.",
+    icon: ShieldCheck,
+    color: "text-green-500",
+    bg: "bg-green-100",
   },
   {
-    title: "Perfektný darček",
-    description: "Originálny darček, ktorý poteší každé kreatívne dieťa.",
+    title: "Rozvoj fantázie",
+    description:
+      "Tvorenie podporuje kreativitu, koncentráciu a jemnú motoriku detí.",
+    icon: Brain,
+    color: "text-yellow-500",
+    bg: "bg-yellow-100",
+  },
+  {
+    title: "Spoločné chvíle",
+    description:
+      "Kreatívna aktivita, pri ktorej vznikajú krásne rodinné spomienky.",
+    icon: Users,
+    color: "text-purple-500",
+    bg: "bg-purple-100",
+  },
+  {
+    title: "Originálny darček",
+    description:
+      "Niečo viac než hračka — vlastnoručne vytvorený výrobok plný emócií.",
     icon: Gift,
-    style: "from-pink-300 to-rose-400",
+    color: "text-pink-500",
+    bg: "bg-pink-100",
   },
   {
     title: "Rýchle doručenie",
-    description: "Vašu objednávku pripravíme a odošleme čo najskôr.",
+    description: "Objednávky pripravujeme starostlivo a posielame čo najskôr.",
     icon: Truck,
-    style: "from-green-300 to-emerald-400",
+    color: "text-blue-500",
+    bg: "bg-blue-100",
   },
   {
     title: "Vyrobené s láskou",
-    description: "Každý produkt pripravujeme s dôrazom na detail.",
+    description: "Každý produkt pripravujeme s dôrazom na kvalitu a detail.",
     icon: Heart,
-    style: "from-yellow-300 to-amber-400",
+    color: "text-red-500",
+    bg: "bg-red-100",
   },
 ];
 
@@ -44,121 +63,205 @@ export default function Benefits() {
   return (
     <section
       className="
-py-20
-md:py-32
-px-4
-md:px-6
-relative
-overflow-hidden
-bg-[#FFF8F0]
-"
+        relative
+        overflow-hidden
+        py-24
+        md:py-36
+        px-5
+        bg-[#FFF8F0]
+      "
     >
+      {/* DECOR */}
+
       <div
         className="
-max-w-6xl
-mx-auto
-"
-      >
-        <h2
-          className="
-text-center
-text-4xl
-sm:text-5xl
-md:text-6xl
-font-black
-text-[#1a1a2e]
-"
-        >
-          Prečo si vybrať nás?
-        </h2>
+          absolute
+          top-20
+          left-0
+          w-[300px]
+          h-[300px]
+          rounded-full
+          bg-pink-300/20
+          blur-[100px]
+        "
+      />
 
-        <p
-          className="
-max-w-2xl
-mx-auto
-mt-6
-text-center
-text-lg
-text-[#1a1a2e]/60
-"
-        >
-          Tvoríme produkty, ktoré spájajú zábavu, kreativitu a krásne spomienky.
-        </p>
+      <div
+        className="
+          absolute
+          bottom-0
+          right-0
+          w-[300px]
+          h-[300px]
+          bg-yellow-300/30
+          blur-[100px]
+          rounded-full
+        "
+      />
+
+      <div
+        className="
+          max-w-6xl
+          mx-auto
+          relative
+          z-10
+        "
+      >
+        {/* TITLE */}
 
         <div
           className="
-grid
-sm:grid-cols-2
-lg:grid-cols-3
-gap-6
-mt-16
-"
+            text-center
+            max-w-3xl
+            mx-auto
+          "
         >
-          {benefits.map((item) => {
+          <div
+            className="
+              inline-flex
+              items-center
+              gap-2
+              text-[#FF2D6B]
+              font-mono
+              text-xs
+              uppercase
+              tracking-[0.3em]
+            "
+          >
+            <Sparkles size={16} />
+            Prečo práve my
+          </div>
+
+          <h2
+            className="
+              mt-5
+              text-4xl
+              sm:text-5xl
+              md:text-6xl
+              font-black
+              text-[#1a1a2e]
+            "
+          >
+            Viac než len
+            <br />
+            <span
+              className="
+                bg-gradient-to-r
+                from-[#FF2D6B]
+                via-purple-500
+                to-blue-500
+                bg-clip-text
+                text-transparent
+              "
+            >
+              obyčajná hračka
+            </span>
+          </h2>
+
+          <p
+            className="
+              mt-6
+              text-lg
+              text-[#1a1a2e]/60
+            "
+          >
+            Vytvárame produkty, ktoré spájajú radosť, učenie a nezabudnuteľné
+            chvíle.
+          </p>
+        </div>
+
+        {/* CARDS */}
+
+        <div
+          className="
+            mt-16
+            grid
+            sm:grid-cols-2
+            lg:grid-cols-3
+            gap-7
+          "
+        >
+          {benefits.map((item, index) => {
             const Icon = item.icon;
 
             return (
-              <div
+              <article
                 key={item.title}
                 className="
-group
-rounded-3xl
-p-8
-bg-white/60
-backdrop-blur-xl
-border
-border-white
-transition-all
-duration-500
-hover:-translate-y-3
-hover:shadow-2xl
-"
+                  group
+                  relative
+                "
               >
                 <div
-                  className={`
-w-12
-h-12
-rounded-2xl
-bg-gradient-to-br
-${item.style}
-flex
-items-center
-justify-center
-mb-6
-transition-transform
-duration-500
-group-hover:scale-110
-`}
+                  className="
+                    relative
+                    h-full
+                    bg-white
+                    rounded-[2rem]
+                    p-8
+                    border
+                    border-white
+                    shadow-[0_25px_70px_-35px_rgba(0,0,0,.2)]
+                    transition-all
+                    duration-500
+                    hover:-translate-y-3
+                  "
                 >
-                  <Icon
-                    size={25}
+                  {/* NUMBER */}
+
+                  <span
                     className="
-text-white
-"
-                  />
+                      absolute
+                      right-7
+                      top-5
+                      text-5xl
+                      font-black
+                      text-black/5
+                    "
+                  >
+                    0{index + 1}
+                  </span>
+
+                  <div
+                    className={`
+                      w-14
+                      h-14
+                      rounded-2xl
+                      ${item.bg}
+                      flex
+                      items-center
+                      justify-center
+                      mb-6
+                      transition
+                      duration-500
+                      group-hover:scale-110
+                    `}
+                  >
+                    <Icon size={28} className={item.color} />
+                  </div>
+
+                  <h3
+                    className="
+                      text-xl
+                      font-black
+                      text-[#1a1a2e]
+                    "
+                  >
+                    {item.title}
+                  </h3>
+
+                  <p
+                    className="
+                      mt-4
+                      text-sm
+                      leading-relaxed
+                      text-[#1a1a2e]/60
+                    "
+                  >
+                    {item.description}
+                  </p>
                 </div>
-
-                <h3
-                  className="
-font-bold
-text-lg
-text-[#1a1a2e]
-"
-                >
-                  {item.title}
-                </h3>
-
-                <p
-                  className="
-mt-3
-text-sm
-leading-relaxed
-text-[#1a1a2e]/70
-"
-                >
-                  {item.description}
-                </p>
-              </div>
+              </article>
             );
           })}
         </div>

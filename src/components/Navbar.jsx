@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import {
   Menu,
@@ -7,6 +9,7 @@ import {
   Image,
   BadgeDollarSign,
   MessageCircle,
+  Sparkles,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -15,58 +18,49 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 40);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const closeMenu = () => {
-    setOpen(false);
-  };
+  const closeMenu = () => setOpen(false);
 
   return (
     <nav
       className={`
-        fixed top-0 left-0 right-0 z-50
-
-        transition-all duration-500
+        fixed
+        top-0
+        left-0
+        right-0
+        z-50
+        transition-all
+        duration-500
 
         ${
           scrolled
             ? `
-            bg-[#FFF8F0]/80
+            bg-white/75
             backdrop-blur-xl
-
-            shadow-[0_10px_40px_rgba(0,0,0,0.08)]
-
+            shadow-[0_15px_40px_rgba(0,0,0,0.08)]
             border-b
-            border-white/50
-
-          `
+            border-white/60
+            py-1
+            `
             : `
             bg-transparent
-          `
+            `
         }
-
       `}
     >
       <div
         className="
           max-w-7xl
           mx-auto
-
           px-6
           py-5
-
           flex
           items-center
           justify-between
@@ -77,33 +71,76 @@ export default function Navbar() {
         <a
           href="/"
           className="
-            text-xl
-            font-black
-            tracking-tight
-
-            text-[#1a1a2e]
-
-            transition
+            flex
+            items-center
+            gap-3
+            group
           "
         >
-          KidsPaint
-          <span className="text-[#FF2D6B]"> Studio</span>
+          <div
+            className="
+              w-11
+              h-11
+              rounded-2xl
+              bg-gradient-to-br
+              from-[#FF2D6B]
+              to-purple-500
+              flex
+              items-center
+              justify-center
+              shadow-lg
+              shadow-pink-200
+              group-hover:rotate-6
+              transition
+            "
+          >
+            <Box size={22} className="text-white" />
+          </div>
+
+          <div
+            className="
+              leading-none
+            "
+          >
+            <p
+              className="
+                text-xl
+                font-black
+                tracking-tight
+                text-[#1a1a2e]
+              "
+            >
+              Kids
+              <span className="text-[#FF2D6B]">Paint</span>
+            </p>
+
+            <span
+              className="
+                text-[10px]
+                uppercase
+                tracking-[0.3em]
+                font-mono
+                text-[#1a1a2e]/50
+              "
+            >
+              3D Studio
+            </span>
+          </div>
         </a>
 
         {/* DESKTOP MENU */}
 
         <div
           className="
-            hidden md:flex
-
+            hidden
+            md:flex
             items-center
-
             gap-8
           "
         >
           <NavLink href="#kits">Sady</NavLink>
 
-          <NavLink href="#birthday">Party</NavLink>
+          <NavLink href="#birthday">Oslavy</NavLink>
 
           <NavLink href="#gallery">Galéria</NavLink>
 
@@ -112,37 +149,34 @@ export default function Navbar() {
           <a
             href="#contact"
             className="
-              font-mono
+              relative
+              overflow-hidden
 
-              text-xs
+              flex
+              items-center
+              gap-2
 
-              uppercase
-
-              tracking-[0.2em]
-
-
-              px-6
+              px-7
               py-3
 
               rounded-full
 
+              bg-[#FF2D6B]
 
-              border-2
+              text-white
 
-              border-[#FF2D6B]
+              font-bold
+              text-sm
 
+              shadow-[0_15px_35px_rgba(255,45,107,0.35)]
 
-              hover:bg-[#FF2D6B]
-
-              hover:text-white
-
+              hover:scale-105
 
               transition-all
-
-              duration-300
             "
           >
-            Kontakt
+            <Sparkles size={16} />
+            Objednať
           </a>
         </div>
 
@@ -153,16 +187,24 @@ export default function Navbar() {
           className="
             md:hidden
 
-            p-2
+            w-11
+            h-11
 
-            rounded-xl
+            rounded-2xl
 
-            hover:bg-white/50
+            bg-white/70
 
-            transition
+            backdrop-blur-xl
+
+            flex
+            items-center
+            justify-center
+
+            shadow-sm
+
           "
         >
-          {open ? <X size={26} /> : <Menu size={26} />}
+          {open ? <X size={25} /> : <Menu size={25} />}
         </button>
       </div>
 
@@ -172,51 +214,43 @@ export default function Navbar() {
         className={`
           md:hidden
 
-          mx-4
+          mx-5
 
           overflow-hidden
 
           transition-all
-
           duration-500
 
-
-          ${open ? "max-h-96 opacity-100 mb-4" : "max-h-0 opacity-0"}
-
+          ${open ? "max-h-[500px] opacity-100 mb-5" : "max-h-0 opacity-0"}
         `}
       >
         <div
           className="
-            rounded-3xl
-
-            bg-white/75
-
+            bg-white/85
             backdrop-blur-xl
+
+            rounded-3xl
 
             shadow-xl
 
-            px-6
-
-            py-6
+            p-6
 
             flex
-
             flex-col
-
             gap-5
           "
         >
           <MobileLink
             href="#kits"
             icon={<Box size={18} />}
-            text="Sady"
+            text="3D Sady"
             close={closeMenu}
           />
 
           <MobileLink
             href="#birthday"
             icon={<Cake size={18} />}
-            text="Party"
+            text="Narodeninové oslavy"
             close={closeMenu}
           />
 
@@ -240,6 +274,28 @@ export default function Navbar() {
             text="Kontakt"
             close={closeMenu}
           />
+
+          <a
+            href="#contact"
+            onClick={closeMenu}
+            className="
+              mt-2
+
+              text-center
+
+              py-3
+
+              rounded-full
+
+              bg-[#FF2D6B]
+
+              text-white
+
+              font-bold
+            "
+          >
+            Vytvoriť objednávku
+          </a>
         </div>
       </div>
     </nav>
@@ -251,6 +307,8 @@ function NavLink({ href, children }) {
     <a
       href={href}
       className="
+        relative
+
         font-mono
 
         text-xs
@@ -261,13 +319,19 @@ function NavLink({ href, children }) {
 
         text-[#1a1a2e]/60
 
-
         hover:text-[#FF2D6B]
 
+        transition
 
-        transition-colors
+        after:absolute
+        after:left-0
+        after:-bottom-2
+        after:w-0
+        after:h-[2px]
+        after:bg-[#FF2D6B]
+        after:transition-all
 
-        duration-300
+        hover:after:w-full
       "
     >
       {children}
@@ -282,11 +346,10 @@ function MobileLink({ href, icon, text, close }) {
       onClick={close}
       className="
         flex
-
         items-center
-
         gap-3
 
+        text-[#1a1a2e]/70
 
         font-mono
 
@@ -296,17 +359,18 @@ function MobileLink({ href, icon, text, close }) {
 
         tracking-wider
 
-
-        text-[#1a1a2e]/70
-
-
         hover:text-[#FF2D6B]
-
 
         transition
       "
     >
-      {icon}
+      <span
+        className="
+          text-[#FF2D6B]
+        "
+      >
+        {icon}
+      </span>
 
       {text}
     </a>

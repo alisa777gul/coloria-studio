@@ -1,4 +1,6 @@
-import { Sparkles } from "lucide-react";
+"use client";
+
+import { Sparkles, ArrowRight, Heart } from "lucide-react";
 import { kits } from "../data/kits";
 import SectionDecor from "./SectionDecor";
 
@@ -7,91 +9,120 @@ export default function Kits() {
     <section
       id="kits"
       className="
-      py-20 md:py-32 
-      px-4 md:px-6 
-      relative overflow-hidden
-      bg-[#FFF8F0]
+        relative
+        overflow-hidden
+        px-5
+        py-24
+        md:px-6
+        md:py-36
+        bg-[#FFF8F0]
       "
     >
       <SectionDecor type="kits" />
+
+      {/* BACKGROUND */}
+
       <div
         className="
-        absolute 
-        w-[250px] h-[250px]
-        rounded-full
-        bg-pink-400/20
-        blur-[80px]
-        top-10 left-5
+          absolute
+          -top-20
+          left-0
+          w-[350px]
+          h-[350px]
+          rounded-full
+          bg-pink-300/20
+          blur-[100px]
         "
       />
 
       <div
         className="
-        absolute 
-        w-[200px] h-[200px]
-        rounded-full
-        bg-yellow-300/30
-        blur-[70px]
-        right-10 bottom-20
+          absolute
+          bottom-0
+          right-0
+          w-[300px]
+          h-[300px]
+          rounded-full
+          bg-yellow-300/30
+          blur-[90px]
         "
       />
 
       <div
         className="
-        max-w-7xl 
-        mx-auto 
-        relative z-10
-      "
+          max-w-7xl
+          mx-auto
+          relative
+          z-10
+        "
       >
-        {/* TITLE */}
+        {/* HEADER */}
 
         <div
           className="
-          text-center
-          mb-16
-        "
+            text-center
+            max-w-3xl
+            mx-auto
+            mb-16
+          "
         >
           <div
             className="
-            flex
-            justify-center
-            items-center
-            gap-2
-            text-pink-500
-            font-mono
-            text-xs
-            uppercase
-            tracking-[0.3em]
-            mb-4
-          "
+              inline-flex
+              items-center
+              gap-2
+              px-4
+              py-2
+              rounded-full
+              bg-white
+              shadow-sm
+              text-[#FF2D6B]
+              font-mono
+              text-xs
+              uppercase
+              tracking-[0.25em]
+            "
           >
-            <Sparkles size={16} />
+            <Sparkles size={15} />
             Kolekcia 2026
           </div>
 
           <h2
             className="
-            text-4xl
-            sm:text-5xl
-            md:text-6xl
-            font-black
-            text-[#1a1a2e]
+              mt-6
+              text-4xl
+              sm:text-5xl
+              md:text-6xl
+              font-black
+              leading-tight
+              text-[#1a1a2e]
             "
           >
-            Kreatívne 3D sady
+            Vyberte si svoju
+            <br />
+            <span
+              className="
+                bg-gradient-to-r
+                from-[#FF2D6B]
+                via-purple-500
+                to-blue-500
+                bg-clip-text
+                text-transparent
+              "
+            >
+              kreatívnu 3D sadu
+            </span>
           </h2>
 
           <p
             className="
-            mt-6
-            max-w-2xl
-            mx-auto
-            text-lg
-            text-[#1a1a2e]/60
+              mt-6
+              text-lg
+              text-[#1a1a2e]/60
             "
           >
-            Originálne 3D figúrky a maľovacie sety, ktoré premieňajú detskú
-            fantáziu na realitu.
+            Každá sada ukrýva malý svet fantázie, ktorý deti vytvoria vlastnými
+            rukami.
           </p>
         </div>
 
@@ -99,122 +130,184 @@ export default function Kits() {
 
         <div
           className="
-          grid
-          sm:grid-cols-2
-          lg:grid-cols-4
-          gap-8
+            grid
+            sm:grid-cols-2
+            lg:grid-cols-4
+            gap-7
           "
         >
-          {kits.map((kit) => (
+          {kits.map((kit, index) => (
             <article
               key={kit.id}
               className="
-              group
-              perspective
+                group
+                relative
               "
             >
+              {/* BADGE */}
+
+              {index === 0 && (
+                <div
+                  className="
+                    absolute
+                    -top-3
+                    left-5
+                    z-20
+                    px-4
+                    py-2
+                    rounded-full
+                    bg-[#FF2D6B]
+                    text-white
+                    text-xs
+                    font-bold
+                    shadow-lg
+                  "
+                >
+                  ⭐ Najobľúbenejšie
+                </div>
+              )}
+
               <div
                 className="
-                rounded-3xl
-                overflow-hidden
-                bg-white/60
-                backdrop-blur-xl
-                border
-                border-white
-                shadow-[0_30px_80px_-20px_rgba(0,0,0,.12)]
-                transition-all
-                duration-500
-                group-hover:-translate-y-3
-                group-hover:rotate-1
+                  h-full
+                  bg-white
+                  rounded-[2rem]
+                  overflow-hidden
+                  shadow-[0_25px_70px_-25px_rgba(0,0,0,.18)]
+                  border
+                  border-white
+                  transition-all
+                  duration-500
+                  group-hover:-translate-y-3
                 "
               >
                 {/* IMAGE */}
 
                 <div
                   className="
-                  overflow-hidden
+                    relative
+                    overflow-hidden
+                    h-72
                   "
                 >
                   <img
                     src={kit.image}
                     alt={kit.title}
                     className="
-                    w-full
-                    h-64
-                    object-cover
-                    transition-transform
-                    duration-700
-                    group-hover:scale-110
+                      w-full
+                      h-full
+                      object-cover
+                      transition
+                      duration-700
+                      group-hover:scale-110
                     "
                   />
+
+                  <div
+                    className="
+                      absolute
+                      top-4
+                      right-4
+                      w-10
+                      h-10
+                      rounded-full
+                      bg-white/90
+                      flex
+                      items-center
+                      justify-center
+                      opacity-0
+                      group-hover:opacity-100
+                      transition
+                    "
+                  >
+                    <Heart size={18} className="text-[#FF2D6B]" />
+                  </div>
                 </div>
 
                 {/* CONTENT */}
 
-                <div className="p-6">
+                <div
+                  className="
+                    p-6
+                  "
+                >
                   <h3
                     className="
-                    font-bold
-                    text-xl
-                    text-[#1a1a2e]
+                      text-xl
+                      font-black
+                      text-[#1a1a2e]
                     "
                   >
                     {kit.title}
                   </h3>
 
-                  <div
-                    className="
-                    inline-block
-                    mt-3
-                    text-2xl
-                    font-black
-                    text-pink-500
-                    relative
-                    "
-                  >
-                    {kit.price}
-
-                    <span
-                      className="
-                      absolute
-                      bottom-1
-                      left-0
-                      w-full
-                      h-2
-                      bg-yellow-300/40
-                      -z-10
-                      "
-                    />
-                  </div>
-
                   <p
                     className="
-                    mt-3
-                    text-sm
-                    leading-relaxed
-                    text-[#1a1a2e]/60
+                      mt-3
+                      text-sm
+                      leading-relaxed
+                      text-[#1a1a2e]/60
                     "
                   >
                     {kit.description}
                   </p>
 
-                  <span
+                  <div
                     className="
-                    inline-block
-                    mt-5
-                    px-4
-                    py-2
-                    rounded-full
-                    bg-pink-100
-                    text-pink-600
-                    text-xs
-                    font-bold
-                    uppercase
-                    tracking-wide
+                      mt-5
+                      flex
+                      items-center
+                      justify-between
                     "
                   >
-                    {kit.age}
-                  </span>
+                    <span
+                      className="
+                        text-2xl
+                        font-black
+                        text-[#FF2D6B]
+                      "
+                    >
+                      {kit.price}
+                    </span>
+
+                    <span
+                      className="
+                        px-3
+                        py-1
+                        rounded-full
+                        bg-pink-100
+                        text-pink-600
+                        text-xs
+                        font-bold
+                      "
+                    >
+                      {kit.age}
+                    </span>
+                  </div>
+
+                  <button
+                    className="
+                      mt-6
+                      w-full
+                      py-3
+                      rounded-xl
+                      bg-[#1a1a2e]
+                      text-white
+                      flex
+                      items-center
+                      justify-center
+                      gap-2
+                      font-bold
+                      opacity-0
+                      translate-y-3
+                      group-hover:opacity-100
+                      group-hover:translate-y-0
+                      transition-all
+                    "
+                  >
+                    Pozrieť sadu
+                    <ArrowRight size={17} />
+                  </button>
                 </div>
               </div>
             </article>

@@ -8,270 +8,274 @@ import {
   PlayCircle,
   ShieldCheck,
   Star,
+  Heart,
+  Wand2,
 } from "lucide-react";
 
 export default function Hero() {
   return (
-    <header
+    <section
       className="
-      relative
-      min-h-screen
-      flex
-      items-center
-      px-6
-      pt-28
-      pb-20
-      overflow-hidden
+        relative
+        min-h-screen
+        flex
+        items-center
+        overflow-hidden
+        px-6
+        pt-32
+        pb-24
       "
       style={{
         background:
           "linear-gradient(160deg,#FFF8F0 0%,#FFE8F5 35%,#F3EEFF 70%,#E0F2FE 100%)",
       }}
     >
-      {/* Background blur orbs */}
+      {/* BACKGROUND BLOBS */}
 
       <div
         className="
-        absolute
-        w-[500px]
-        h-[500px]
-        rounded-full
-        bg-[#FF2D6B]
-        opacity-[0.08]
-        blur-[80px]
-        top-[-10%]
-        right-[-5%]
+          absolute
+          w-[600px]
+          h-[600px]
+          rounded-full
+          bg-[#FF2D6B]
+          opacity-[0.08]
+          blur-[100px]
+          -top-40
+          -right-40
         "
       />
 
       <div
         className="
-        absolute
-        w-[600px]
-        h-[600px]
-        rounded-full
-        bg-purple-500
-        opacity-[0.06]
-        blur-[80px]
-        bottom-[-15%]
-        left-[-10%]
+          absolute
+          w-[500px]
+          h-[500px]
+          rounded-full
+          bg-purple-500
+          opacity-[0.08]
+          blur-[100px]
+          -bottom-40
+          -left-40
         "
       />
 
       <div
         className="
-        absolute
-        w-[300px]
-        h-[300px]
-        rounded-full
-        bg-[#FFE600]
-        opacity-[0.12]
-        blur-[80px]
-        top-[30%]
-        left-[20%]
+          absolute
+          w-[250px]
+          h-[250px]
+          rounded-full
+          bg-yellow-300
+          opacity-[0.15]
+          blur-[80px]
+          left-[25%]
+          top-[40%]
         "
       />
 
-      {/* Floating shapes */}
+      {/* FLOATING ELEMENTS */}
 
       <div
         className="
-        hidden lg:block
-        absolute
-        top-[15%]
-        right-[12%]
-        w-16 h-16
-        rounded-2xl
-        bg-gradient-to-br
-        from-yellow-300
-        to-orange-300
-        opacity-60
-        "
-      />
-
-      <div
-        className="
-        hidden lg:block
-        absolute
-        top-[60%]
-        left-[8%]
-        w-12 h-12
-        rounded-full
-        bg-gradient-to-br
-        from-pink-500
-        to-purple-400
-        opacity-50
-        "
-      />
-
-      <div
-        className="
-        hidden lg:block
-        absolute
-        bottom-[20%]
-        right-[25%]
-        w-10 h-10
-        rounded-xl
-        bg-gradient-to-br
-        from-green-400
-        to-teal-300
-        opacity-50
-        "
-      />
-
-      <div
-        className="
-        max-w-7xl
-        mx-auto
-        w-full
-        grid
-        lg:grid-cols-12
-        gap-12
-        items-center
-        relative
-        z-10
+          hidden
+          lg:flex
+          absolute
+          top-[18%]
+          right-[8%]
+          w-20
+          h-20
+          rounded-3xl
+          bg-white/60
+          backdrop-blur-xl
+          shadow-xl
+          items-center
+          justify-center
+          rotate-12
         "
       >
-        {/* LEFT CONTENT */}
+        <Heart className="text-[#FF2D6B]" size={32} fill="currentColor" />
+      </div>
 
-        <div className="lg:col-span-7">
-          <p
+      <div
+        className="
+          hidden
+          lg:flex
+          absolute
+          bottom-[20%]
+          left-[6%]
+          w-16
+          h-16
+          rounded-2xl
+          bg-white/60
+          backdrop-blur-xl
+          shadow-xl
+          items-center
+          justify-center
+          -rotate-12
+        "
+      >
+        <Palette className="text-purple-500" size={28} />
+      </div>
+
+      <div
+        className="
+          max-w-7xl
+          mx-auto
+          w-full
+          grid
+          lg:grid-cols-12
+          gap-14
+          items-center
+          relative
+          z-10
+        "
+      >
+        {/* LEFT */}
+
+        <div
+          className="
+            lg:col-span-7
+          "
+        >
+          <div
             className="
-            font-mono
-            text-xs
-            uppercase
-            tracking-[0.3em]
-            text-[#FF2D6B]
-            mb-6
-            flex
-            items-center
-            gap-2
+              inline-flex
+              items-center
+              gap-2
+              px-4
+              py-2
+              rounded-full
+              bg-white/60
+              backdrop-blur-xl
+              border
+              border-white
+              shadow-sm
+              mb-7
             "
           >
-            <Sparkles size={16} />
-            Kreatívne 3D sady pre deti
-          </p>
+            <Sparkles size={16} className="text-[#FF2D6B]" />
+
+            <span
+              className="
+                text-xs
+                font-mono
+                uppercase
+                tracking-[0.25em]
+                text-[#1a1a2e]/70
+              "
+            >
+              Kreatívny svet 3D tvorby
+            </span>
+          </div>
 
           <h1
             className="
-            text-5xl
-            sm:text-6xl
-            md:text-7xl
-            lg:text-[5.5rem]
-            font-black
-            leading-[0.9]
-            text-[#1a1a2e]
+              text-5xl
+              sm:text-6xl
+              md:text-7xl
+              lg:text-[5.7rem]
+              leading-[0.9]
+              font-black
+              tracking-tight
+              text-[#1a1a2e]
             "
           >
-            Vytvorte si
+            Vytvorte
             <br />
-            vlastný svet
+            vlastnú
             <br />
             <span
               className="
-              bg-gradient-to-r
-              from-[#FF2D6B]
-              via-purple-500
-              to-blue-500
-              bg-clip-text
-              text-transparent
+                bg-gradient-to-r
+                from-[#FF2D6B]
+                via-purple-500
+                to-blue-500
+                bg-clip-text
+                text-transparent
               "
             >
-              3D fantázie
+              3D fantáziu
             </span>
           </h1>
 
           <p
             className="
-            mt-8
-            text-lg
-            leading-relaxed
-            max-w-lg
-            text-[#1a1a2e]/70
+              mt-8
+              max-w-xl
+              text-lg
+              leading-relaxed
+              text-[#1a1a2e]/65
             "
           >
-            Originálne 3D figúrky a kreatívne maľovacie sady, ktoré rozvíjajú
-            detskú predstavivosť, tvorivosť a radosť z vlastného výrobku.
+            Originálne 3D figúrky na mieru a kreatívne maľovacie sady, ktoré
+            premenia detské nápady na skutočné malé umelecké diela.
           </p>
 
-          {/* Steps */}
+          {/* PROCESS */}
 
           <div
             className="
-            mt-8
-            flex
-            flex-wrap
-            items-center
-            gap-3
-            font-mono
-            text-xs
-            uppercase
-            tracking-wider
-            text-[#1a1a2e]/50
+              mt-8
+              flex
+              flex-wrap
+              gap-4
             "
           >
-            <span className="flex items-center gap-1">
-              <Lightbulb size={16} className="text-yellow-400" />
-              Fantázia
-            </span>
+            <Step icon={<Lightbulb size={18} />} text="Nápad" />
 
-            <span>→</span>
+            <span className="text-black/20">→</span>
 
-            <span className="flex items-center gap-1">
-              <Box size={16} className="text-[#FF2D6B]" />
-              3D Model
-            </span>
+            <Step icon={<Box size={18} />} text="3D výroba" />
 
-            <span>→</span>
+            <span className="text-black/20">→</span>
 
-            <span className="flex items-center gap-1">
-              <Palette size={16} className="text-green-500" />
-              Produkt
-            </span>
+            <Step icon={<Palette size={18} />} text="Tvorenie" />
           </div>
 
-          {/* Buttons */}
+          {/* BUTTONS */}
 
           <div
             className="
-            mt-10
-            flex
-            flex-wrap
-            gap-4
+              mt-10
+              flex
+              flex-wrap
+              gap-4
             "
           >
             <a
               href="#kits"
               className="
-              px-10
-              py-4
-              rounded-2xl
-              bg-[#FF2D6B]
-              text-white
-              font-bold
-              text-lg
-              hover:scale-105
-              transition
-              shadow-[0_20px_60px_-15px_rgba(255,45,107,0.4)]
+                px-10
+                py-4
+                rounded-2xl
+                bg-[#FF2D6B]
+                text-white
+                font-bold
+                text-lg
+                shadow-[0_20px_60px_rgba(255,45,107,0.35)]
+                hover:scale-105
+                transition
               "
             >
-              Objavte sady
+              Objaviť kolekciu
             </a>
 
             <a
               href="#gallery"
               className="
-              px-6
-              py-4
-              rounded-2xl
-              font-mono
-              text-sm
-              uppercase
-              flex
-              items-center
-              gap-2
-              text-[#1a1a2e]/60
-              hover:text-[#1a1a2e]
+                px-7
+                py-4
+                rounded-2xl
+                bg-white/60
+                backdrop-blur-xl
+                flex
+                items-center
+                gap-2
+                font-medium
+                text-[#1a1a2e]/70
+                hover:bg-white
+                transition
               "
             >
               <PlayCircle size={20} />
@@ -279,160 +283,172 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Reviews */}
+          {/* TRUST */}
 
           <div
             className="
-            mt-10
-            flex
-            items-center
-            gap-6
+              mt-10
+              flex
+              items-center
+              gap-5
             "
           >
             <div className="flex -space-x-3">
-              <img
-                src="/avatars/avatar1.jpg"
-                className="
-                w-11
-                h-11
-                rounded-full
-                border-[3px]
-                border-white
-                object-cover
-                "
-              />
-
-              <img
-                src="/avatars/avatar2.jpg"
-                className="
-                w-11
-                h-11
-                rounded-full
-                border-[3px]
-                border-white
-                object-cover
-                "
-              />
-
-              <img
-                src="/avatars/avatar3.jpg"
-                className="
-                w-11
-                h-11
-                rounded-full
-                border-[3px]
-                border-white
-                object-cover
-                "
-              />
+              {[1, 2, 3].map((item) => (
+                <img
+                  key={item}
+                  src={`/avatars/avatar${item}.jpg`}
+                  className="
+                      w-12
+                      h-12
+                      rounded-full
+                      object-cover
+                      border-4
+                      border-white
+                    "
+                />
+              ))}
             </div>
 
             <div>
-              <div className="flex gap-1 text-yellow-400">
-                {[1, 2, 3, 4, 5].map((item) => (
-                  <Star key={item} size={16} fill="currentColor" />
+              <div className="flex text-yellow-400">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} size={17} fill="currentColor" />
                 ))}
               </div>
 
               <p
                 className="
-                font-mono
-                text-xs
-                text-[#1a1a2e]/50
-                mt-1
+                  text-xs
+                  mt-1
+                  font-mono
+                  text-[#1a1a2e]/50
                 "
               >
-                500+ spokojných rodín
+                500+ spokojných zákazníkov
               </p>
             </div>
           </div>
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* IMAGE */}
 
-        <div className="lg:col-span-5">
-          <div className="relative">
+        <div
+          className="
+            lg:col-span-5
+          "
+        >
+          <div
+            className="
+              relative
+            "
+          >
             <div
               className="
-              absolute
-              -inset-8
-              rounded-[2rem]
-              bg-gradient-to-br
-              from-[#FF2D6B]/20
-              via-purple-400/15
-              to-[#FFE600]/20
-              blur-3xl
+                absolute
+                -inset-8
+                rounded-[3rem]
+                bg-gradient-to-br
+                from-[#FF2D6B]/20
+                via-purple-400/20
+                to-yellow-300/20
+                blur-3xl
               "
             />
 
             <div
               className="
-              relative
-              rounded-[2rem]
-              overflow-hidden
-              shadow-2xl
+                relative
+                rounded-[3rem]
+                overflow-hidden
+                shadow-2xl
+                border
+                border-white/60
               "
             >
               <img
                 src="/images/hero.jpg"
-                alt="3D kids kit"
+                alt="3D kreatívne sady pre deti"
                 className="
-                w-full
-                aspect-[3/4]
-                object-cover
-                
+                  w-full
+                  aspect-[4/5]
+                  object-cover
                 "
               />
             </div>
 
-            {/* Safety badge */}
-
             <div
               className="
-              absolute
-              -bottom-4
-              -left-4
-              bg-white/70
-              backdrop-blur-xl
-              px-5
-              py-3
-              rounded-2xl
-              shadow-xl
-              flex
-              items-center
-              gap-2
-              text-sm
-              font-bold
+                absolute
+                -bottom-5
+                -left-5
+                bg-white/85
+                backdrop-blur-xl
+                rounded-2xl
+                px-5
+                py-4
+                shadow-xl
+                flex
+                items-center
+                gap-3
               "
             >
-              <ShieldCheck size={20} className="text-green-500" />
-              Certifikované & bezpečné
+              <ShieldCheck size={25} className="text-green-500" />
+
+              <div>
+                <p className="font-bold text-sm">Bezpečné materiály</p>
+
+                <p className="text-xs text-black/50">Pre malých tvorcov</p>
+              </div>
             </div>
 
-            {/* New badge */}
-
             <div
               className="
-              absolute
-              -top-4
-              -right-4
-              bg-white/70
-              backdrop-blur-xl
-              px-4
-              py-2
-              rounded-xl
-              shadow-xl
-              text-xs
-              font-mono
-              font-bold
-              uppercase
+                absolute
+                -top-5
+                -right-5
+                bg-white/90
+                backdrop-blur-xl
+                rounded-2xl
+                px-5
+                py-3
+                shadow-xl
+                flex
+                items-center
+                gap-2
+                font-bold
+                text-sm
               "
             >
-              <span className="text-green-500">●</span> Nové 2026
+              <Wand2 size={18} className="text-[#FF2D6B]" />
+              Novinka 2026
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
+  );
+}
+
+function Step({ icon, text }) {
+  return (
+    <div
+      className="
+        flex
+        items-center
+        gap-2
+        px-4
+        py-2
+        rounded-full
+        bg-white/60
+        backdrop-blur-xl
+        text-sm
+        font-medium
+        text-[#1a1a2e]/70
+      "
+    >
+      {icon}
+      {text}
+    </div>
   );
 }
