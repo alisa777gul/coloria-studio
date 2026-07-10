@@ -292,43 +292,7 @@ export default function Hero() {
               items-center
               gap-5
             "
-          >
-            <div className="flex -space-x-3">
-              {[1, 2, 3].map((item) => (
-                <img
-                  key={item}
-                  src={`/avatars/avatar${item}.jpg`}
-                  className="
-                      w-12
-                      h-12
-                      rounded-full
-                      object-cover
-                      border-4
-                      border-white
-                    "
-                />
-              ))}
-            </div>
-
-            <div>
-              <div className="flex text-yellow-400">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={17} fill="currentColor" />
-                ))}
-              </div>
-
-              <p
-                className="
-                  text-xs
-                  mt-1
-                  font-mono
-                  text-[#1a1a2e]/50
-                "
-              >
-                500+ spokojných zákazníkov
-              </p>
-            </div>
-          </div>
+          ></div>
         </div>
 
         {/* IMAGE */}
