@@ -7,7 +7,6 @@ import {
   Palette,
   PlayCircle,
   ShieldCheck,
-  Star,
   Heart,
   Wand2,
 } from "lucide-react";
